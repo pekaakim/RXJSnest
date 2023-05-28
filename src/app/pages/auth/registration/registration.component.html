@@ -1,0 +1,49 @@
+<div class="d-flex flex-column registration-input-wrap">
+    <div>
+           <span class="mx-3">Login</span>
+           <input type="text" pInputText [ngClass]="{'input-error': !login}" [(ngModel)]="login" />
+    </div>
+
+    <div>
+           <span class="mx-3">Password</span>
+           <input type="password" class="mt-3" 
+           pInputText 
+           [ngClass]="{'input-error': !password}" 
+           [(ngModel)]="password" />
+    </div>
+
+
+    <div>
+        <span class="mx-3">Repeat password</span>
+        <input type="password" class="mt-3" 
+        pInputText 
+        [ngClass]="{'input-error': !password_repeat}" 
+        [(ngModel)]="password_repeat" />
+    </div>
+
+    <div>
+        <span class="mx-3">Email</span>
+        <input type="text" class="mt-3" pInputText [(ngModel)]="email" />
+    </div>
+
+    <div *ngIf="showCardNumber; else noSelected">
+        <span class="mx-3">Card number</span>
+        <input type="text" class="mt-3" pInputText [(ngModel)]="card_number" />
+    </div>
+</div>
+
+<div>
+    <p-checkbox class="my-3 mx-3" label="Save user on the local storage" name="saveLocalStorage" [binary]="true" value="val1" [(ngModel)]="saveLocalStorage"></p-checkbox>
+</div>
+
+<div>
+    <button type="button" 
+    [disabled]="!login || !password || !password_repeat" 
+    (click)="registration($event)" 
+    class='my-3 mx-3 btn btn-primary'>
+    Register now!</button>
+</div>
+
+<ng-template #noSelected>
+    <p>Card is not selected</p>
+</ng-template>

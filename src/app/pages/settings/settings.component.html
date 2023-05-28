@@ -1,0 +1,22 @@
+<div class="card">
+    <p-tabView>
+        <p-tabPanel header="Main information">
+            <div class="user">Login {{textProp}}</div>
+        </p-tabPanel>
+        <p-tabPanel header="Statistic">
+            <ng-template pTemplate="content">
+                <app-statistic></app-statistic>
+            </ng-template>           
+        </p-tabPanel>
+        <p-tabPanel header="Tour loader">
+            <ng-template pTemplate="content">
+                <app-tour-loader></app-tour-loader>
+            </ng-template>
+        </p-tabPanel>
+        <p-tabPanel header="Change password">
+            <ng-template pTemplate="content">
+                <app-change-password></app-change-password>
+            </ng-template>
+        </p-tabPanel>
+    </p-tabView>
+</div>    
